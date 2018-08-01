@@ -10,8 +10,8 @@ for ITERATING through SEQUENCES, including selections from:
   -- Looking at two sequences in parallel
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Siwei Xu.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -103,9 +103,15 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    index_of_min = 0
+    for k in range(len(strings)):
+        if len(strings[k]) < len(strings[index_of_min]):
+            index_of_min = k
+
+    return strings[index_of_min]
 
 
 def run_test_index_of_largest_number():
@@ -180,9 +186,15 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    index_of_max = 0
+    for k in range(n):
+        if numbers[k] > numbers[index_of_max]:
+            index_of_max = k
+
+    return index_of_max
 
 
 # ----------------------------------------------------------------------
@@ -238,6 +250,12 @@ def number_of_stutters(s):
     # TODO: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(len(s) - 1):
+        if s[k + 1] == s[k]:
+            count += 1
+
+    return count
 
 
 def run_test_is_palindrome():
@@ -317,6 +335,12 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     ####################################################################
     # ------------------------------------------------------------------
+    for k in range(len(s)):
+        if s[len(s) - k - 1] == s[k]:
+            return True
+        else:
+            return False
+
 
 
 # ----------------------------------------------------------------------
